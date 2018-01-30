@@ -24,20 +24,21 @@ Security & Access Control
 Q. How do I ensure data privacy?
 
 A. There are various aspects to data privacy.
-First, you can segregate your network into channels, where each channel
+
+1. Segregate your network into channels, where each channel
 represents a subset of participants that are authorized to see the data
 for the chaincodes that are deployed to that channel.
-Second, within a channel you can restrict the input data to chaincode to the
+2. Within a channel you can restrict the input data to chaincode to the
 set of endorsers only, by using visibility settings. The visibility setting
 will determine whether input and output chaincode data is included in the
 submitted transaction,  versus just output data.
-Third, you can hash or encrypt the data before calling chaincode. If you hash
+3. You can hash or encrypt the data before calling chaincode. If you hash
 the data then you will need to provide a means to share the source data.
 If you encrypt the data then you will need to provide a means to share the
-decryption keys.
-Fourth, you can restrict data access to certain roles in your organization, by
+decryption keys.Starting with v1.1, fabric offers a native library that can be exposed to chaincode for encryption and decryption
+4. You can restrict data access to certain roles in your organization, by
 building access control into the chaincode logic.
-Fifth, ledger data at rest can be encrypted via file system encryption on
+5. Ledger data at rest can be encrypted via file system encryption on
 the peer, and data in-transit is encrypted via TLS.
 
 Q. Do the orderers see the transaction data?
